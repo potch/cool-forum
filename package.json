@@ -1,0 +1,27 @@
+{
+  "name": "forum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "onchange -ik '**/*.js' -- node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "htm": "^3.0.4",
+    "lodash": "^4.17.21",
+    "onchange": "^7.1.0",
+    "preact": "^10.5.13",
+    "preact-render-to-string": "^5.1.19",
+    "sequelize": "^6.6.2",
+    "sqlite3": "^5.0.2"
+  }
+}

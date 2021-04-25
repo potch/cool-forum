@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  background: ivory;
+  font-family: Tahoma;
+  text-shadow: 0 1px 2px #ccc;
+}
+
+#container {
+  max-width: 960px;
+  margin: 1rem auto;
+}
+
+header {
+  text-align: center;
+  line-height: 3em;
+  font-size: 2em;
+}
+
+footer,
+header,
+section {
+  margin-top: 1em;
+  padding: 1em 2em;
+  border: 1px solid black;
+  position: relative;
+  background: #dca;
+}
+
+section > h2 {
+  background: navy;
+  color: white;
+  margin: -1rem -2rem 1em;
+  padding: 0.5rem 2rem;
+}
+
+.menu {
+  text-align: right;
+}
+
+footer > * + * {
+  margin-left: 1em;
+}
+
+.button {
+  background: linear-gradient(red, green);
+  border: 1px solid #888;
+  padding: 1rem 2rem;
+}
