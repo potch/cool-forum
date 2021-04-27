@@ -1,9 +1,9 @@
-import htm from "htm";
-import { h } from "preact";
+const htm = require('htm');
+const { h } = require('preact');
 
 const html = htm.bind(h);
 
-export const IndexPage = ({ user = {}, forums = [] }) => {
+module.exports.IndexPage = ({ user = {}, forums = [] }) => {
   return html`
     <nav class="menu">oh hey it's ${user.username}</nav>
     <header>

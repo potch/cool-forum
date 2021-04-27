@@ -1,9 +1,9 @@
-import htm from "htm";
-import { h } from "preact";
+const htm = require('htm');
+const { h } = require('preact');
 
 const html = htm.bind(h);
 
-export const TopicPage = ({
+module.exports.TopicPage = ({
   user = {},
   forum = {},
   topic = {},
