@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "onchange -ik '**/*.js' -- node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "dbsync": "node scripts/dbSync.js"
   },
-  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -23,5 +24,8 @@
     "preact-render-to-string": "^5.1.19",
     "sequelize": "^6.6.2",
     "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0"
   }
 }

@@ -1,4 +1,4 @@
-export const HtmlPage = ({ title, content }) => {
+module.exports.HtmlPage = ({ title, content }) => {
   return `
     <!DOCTYPE html>
     <html lang="en">
