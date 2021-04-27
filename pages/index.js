@@ -1,9 +1,9 @@
-const htm = require('htm');
-const { h } = require('preact');
+import htm from "htm";
+import { h } from "preact";
 
 const html = htm.bind(h);
 
-module.exports.IndexPage = ({ user = {}, forums = [] }) => {
+export const IndexPage = ({ user = {}, forums = [] }) => {
   return html`
     <nav class="menu">oh hey it's ${user.username}</nav>
     <header>
@@ -12,7 +12,7 @@ module.exports.IndexPage = ({ user = {}, forums = [] }) => {
     <section class="forums">
       <h2 class="section-title">forums</h2>
       ${forums.map(
-        forum => html`
+        (forum) => html`
           <div class="forums">
             <h2>
               <a href="/forum/${forum.id}">${forum.name}</a>

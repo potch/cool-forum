@@ -1,13 +1,13 @@
-const express = require('express');
-const { render } = require('preact-render-to-string');
-const session = require('express-session');
-const bodyParser = require('body-parser');
+import express from "express";
+import { render } from "preact-render-to-string";
+import session from "express-session";
+import bodyParser from "body-parser";
 
-const { User, Topic, Forum, dbSync } = require('./models');
-const { HtmlPage } = require("./template.js");
-const { IndexPage } = require("./pages/index.js");
-const { ForumPage } = require("./pages/forum.js");
-const { TopicPage } = require("./pages/topic.js");
+import { User, Topic, Forum, dbSync } from "./models/index.js";
+import { HtmlPage } from "./template.js";
+import { IndexPage } from "./pages/index.js";
+import { ForumPage } from "./pages/forum.js";
+import { TopicPage } from "./pages/topic.js";
 
 const SESSION_SECRET = "just trust me";
 
@@ -40,7 +40,7 @@ app.get("/forum/:forumId", async (req, res) => {
 app.get("/topic/:topicId", async (req, res) => {
   const topic = await Topic.findByPk(req.params.topicId);
   const messages = await topic.getMessages({ include: User });
-  console.log(messages.map(m => m.user));
+  console.log(messages.map((m) => m.user));
   res.end(
     renderPage(
       topic.name,
@@ -74,10 +74,10 @@ const start = async () => {
     })
   );
 
-  app.listen(PORT, err => {
+  app.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`Ready on http://localhost:${PORT}`);
   });
 };
 
-start().catch(e => console.error(e));
+start().catch((e) => console.error(e));
