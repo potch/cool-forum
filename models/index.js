@@ -1,9 +1,9 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize("sqlite:db.sqlite3");
+const sequelize = new Sequelize('sqlite:db.sqlite3');
 
 const User = sequelize.define(
-  "User",
+  'User',
   {
     username: {
       type: DataTypes.STRING,
@@ -18,7 +18,7 @@ const User = sequelize.define(
 );
 
 const Forum = sequelize.define(
-  "Forum",
+  'Forum',
   {
     name: {
       type: DataTypes.STRING,
@@ -29,7 +29,7 @@ const Forum = sequelize.define(
 );
 
 const Topic = sequelize.define(
-  "Topic",
+  'Topic',
   {
     name: {
       type: DataTypes.STRING,
@@ -40,7 +40,7 @@ const Topic = sequelize.define(
 );
 
 const Message = sequelize.define(
-  "Message",
+  'Message',
   {
     title: {
       type: DataTypes.STRING,
@@ -74,30 +74,30 @@ async function dbSync() {
   await sequelize.sync({ force: true });
 
   const potch = await User.create({
-    username: "potch",
-    bio: "dababy enthusiast",
+    username: 'potch',
+    bio: 'dababy enthusiast',
   });
   const osmose = await User.create({
-    username: "osmose",
-    bio: "final fantasy-type beat",
+    username: 'osmose',
+    bio: 'final fantasy-type beat',
   });
-  const forum = await Forum.create({ name: "Title Screen" });
+  const forum = await Forum.create({ name: 'Title Screen' });
   const topic = await Topic.create({
-    name: "the first topic",
+    name: 'the first topic',
     // forumId: forum.id,
   });
   await topic.setForum(forum);
 
   const message1 = await Message.create({
-    title: "Whatup fam",
-    body: "hows it hanging",
+    title: 'Whatup fam',
+    body: 'hows it hanging',
     date: Date.now(),
   });
   await message1.setUser(osmose);
   await message1.setTopic(topic);
   const message2 = await Message.create({
-    title: "Re: Re: Whatup fam",
-    body: "nm how bout u",
+    title: 'Re: Re: Whatup fam',
+    body: 'nm how bout u',
     date: Date.now(),
   });
   await message2.setUser(potch);

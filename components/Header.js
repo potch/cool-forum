@@ -1,5 +1,5 @@
-import htm from "htm";
-import { h } from "preact";
+import htm from 'htm';
+import { h } from 'preact';
 
 const html = htm.bind(h);
 
