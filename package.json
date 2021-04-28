@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "dbsync": "node scripts/dbSync.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",

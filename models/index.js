@@ -1,8 +1,9 @@
-const { Sequelize, DataTypes } = require('sequelize');
+import SequelizeDefault from "sequelize";
+const { Sequelize, DataTypes } = SequelizeDefault;
 
 const sequelize = new Sequelize("sqlite:db.sqlite3");
 
-const User = sequelize.define(
+export const User = sequelize.define(
   "User",
   {
     username: {
@@ -17,7 +18,7 @@ const User = sequelize.define(
   {}
 );
 
-const Forum = sequelize.define(
+export const Forum = sequelize.define(
   "Forum",
   {
     name: {
@@ -28,7 +29,7 @@ const Forum = sequelize.define(
   {}
 );
 
-const Topic = sequelize.define(
+export const Topic = sequelize.define(
   "Topic",
   {
     name: {
@@ -39,7 +40,7 @@ const Topic = sequelize.define(
   {}
 );
 
-const Message = sequelize.define(
+export const Message = sequelize.define(
   "Message",
   {
     title: {
@@ -70,7 +71,7 @@ Message.belongsTo(User);
 
 Topic.hasOne(User);
 
-async function dbSync() {
+export async function dbSync() {
   await sequelize.sync({ force: true });
 
   const potch = await User.create({
@@ -103,11 +104,3 @@ async function dbSync() {
   await message2.setUser(potch);
   await message2.setTopic(topic);
 }
-
-module.exports = {
-  User,
-  Forum,
-  Topic,
-  Message,
-  dbSync,
-};

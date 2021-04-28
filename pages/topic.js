@@ -1,9 +1,9 @@
-const htm = require('htm');
-const { h } = require('preact');
+import htm from "htm";
+import { h } from "preact";
 
 const html = htm.bind(h);
 
-module.exports.TopicPage = ({
+export const TopicPage = ({
   user = {},
   forum = {},
   topic = {},
@@ -20,7 +20,7 @@ module.exports.TopicPage = ({
     </section>
     <section class="topics">
       ${messages.map(
-        message => html`
+        (message) => html`
           <div class="message">
             <h4>${message.title}</h4>
             <i>by ${message.User && message.User.username}</i>
