@@ -34,7 +34,7 @@ export const TopicPage = ({
     <footer>
       <span>© 2002-2021 friends</span>
       <b>•</b>
-      <a href="/import $1 from $2">reset the database</a>
+      <a href="/dbsync">reset the database</a>
     </footer>
   `;
 };
